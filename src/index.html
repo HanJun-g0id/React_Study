@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>테스트 사이트</title>
+
+        <link rel = "stylesheet" href="index.css">
+        <!-- 외부 css 파일 연결 -->
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>    
+        
+        <script src="./MyButton.js"></script>
+        <!-- MyButton 컴포넌트가 정의된 외부 스크립트 파일을 연결 -->
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                //돔을 다 불러온 후 실행되는 이벤트리스너
+                const domContainer = document.querySelector('#root');
+                //root ID를 가진 div를 찾아내서 리액트 렌더링 컨테이너로 지정
+                const root = ReactDOM.createRoot(domContainer);
+                //렌더링 준비
+                root.render(React.createElement(MyButton));
+                //Mybutton 컴포넌트를 생성해서 root에 렌더링
+            });
+        </script>
+    </head>
+    <body>
+        <h1>환영합니다 테스트 사이트 입니다!</h1>
+
+        <div id="root"></div>
+        <!-- 리액트가 렌더링 할 컨테이너 -->
+    </body>    
+</html>
