@@ -1,4 +1,4 @@
-# React Todo List
+# 🗒️ React Todo List
 
 ## 과제 소개
 
