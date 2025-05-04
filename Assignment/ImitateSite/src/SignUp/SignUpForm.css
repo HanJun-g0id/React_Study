@@ -1,0 +1,107 @@
+.signup-box {
+  width: 370px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 36px 28px 32px 28px;
+  margin: 40px auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.signup-title {
+  margin: 0 0 26px 0;
+  font-size: 1.4rem;
+  color: #22223b;
+  font-weight: bold;
+  text-align: center;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.profile-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.profile-colors {
+  display: flex;
+  gap: 10px;
+}
+
+.color-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  outline: none;
+  cursor: pointer;
+  transition: border 0.2s, transform 0.1s;
+  margin: 0;
+  padding: 0;
+}
+.color-btn.selected {
+  border: 2.5px solid #222;
+  transform: scale(1.15);
+}
+
+.input-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+.input-section h4 {
+  margin: 0 0 4px 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #22223b;
+  text-align: left;
+}
+
+.input-section input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #e2e2e2;
+  border-radius: 7px;
+  font-size: 1rem;
+  color: #222;
+  background: #fafbfc;
+  transition: border 0.2s;
+  display: block;
+  box-sizing: border-box;
+}
+.input-section input:focus {
+  border: 2.5px solid #6666FF;
+  outline: none;
+}
+
+.signup-confirm-btn {
+  width: 100%;
+  padding: 13px 0;
+  background: #6666FF;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  opacity: 1;
+}
+.signup-confirm-btn:disabled {
+  background: #bcd7fa;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
