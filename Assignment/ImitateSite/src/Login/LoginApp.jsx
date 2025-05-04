@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import SignUp from '../SignUp/MoveSignUp';
+import { useNavigate } from 'react-router-dom';
 import './LoginApp.css';
 
 function LoginApp() {
+  const navigate = useNavigate();
 
   const [showSignUp, setShowSignUp] = useState(false);
 
@@ -34,6 +36,9 @@ function LoginApp() {
         Log in with Github
       </button>
       {showSignUp && <SignUp onClose={handleCloseSignUp} />}
+      <button className="signup-btn" onClick={() => navigate('/signup')}>
+        회원가입
+      </button>
     </div>
   ); 
 }
