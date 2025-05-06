@@ -36,9 +36,19 @@ function LoginApp() {
         Log in with Github
       </button>
       {showSignUp && <SignUp onClose={handleCloseSignUp} />}
-      <button className="signup-btn" onClick={() => navigate('/signup')}>
-        회원가입
-      </button>
+      <div className="signup-link-row">
+        <span
+          className="signup-link"
+          onClick={() => navigate('/signup')}
+          tabIndex={0}
+          role="button"
+          onKeyDown={e => {
+            if (e.key === 'Enter' || e.key === ' ') navigate('/signup');
+          }}
+        >
+          회원가입
+        </span>
+      </div>
     </div>
   ); 
 }
