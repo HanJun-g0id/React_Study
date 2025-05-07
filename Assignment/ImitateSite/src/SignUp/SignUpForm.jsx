@@ -1,16 +1,11 @@
 import React, { useState, useRef } from 'react';
 import './SignUpForm.css';
 
-const PROFILE_COLORS = [
-  '#6170fb', '#f44336', '#4caf50', '#ff9800', '#9c27b0', '#607d8b'
-];
-
-function SignUpForm({ onClose }) {
-  const [profileColor, setProfileColor] = useState(PROFILE_COLORS[0]);
-  const [name, setName] = useState('');
-  const [baekjoonId, setBaekjoonId] = useState('');
+function SignUpForm() {
   const [profileImg, setProfileImg] = useState('/logo192.png');
   const fileInputRef = useRef(null);
+  const [name, setName] = useState('');
+  const [baekjoonId, setBaekjoonId] = useState('');
 
   const isComplete = name.trim() && baekjoonId.trim();
 
@@ -23,83 +18,66 @@ function SignUpForm({ onClose }) {
     }
   };
 
-  const handleExclamationClick = () => {
+  const handleEditClick = () => {
     fileInputRef.current.click();
   };
 
   return (
-    <div className="signup-box">
-      <h2 className="signup-title">Sign Up</h2>
-      <div className="profile-section">
-        <div className="profile-avatar-row">
-          <div
-            className="profile-avatar"
-            style={{ background: profileColor }}
-          >
-            <img
-              src={profileImg}
-              alt="프로필 이미지"
-              className="profile-img"
+    <div className="center-container">
+      <div className="signup-card">
+        <h2 className="signup-title">Sign Up</h2>
+        <div className="profile-row">
+          <div className="profile-avatar">
+            <img src={profileImg} alt="프로필" className="profile-img" />
+            <button
+              className="profile-edit-btn"
+              type="button"
+              onClick={handleEditClick}
+              title="프로필 사진 변경"
+            >
+            <img src="./pencil.png" alt="프로필 사진 변경"/>
+            </button>
+            <input
+              type="file"
+              accept="image/*"
+              style={{ display: 'none' }}
+              ref={fileInputRef}
+              onChange={handleProfileImgChange}
             />
           </div>
-          <button
-            className="profile-edit-btn"
-            type="button"
-            onClick={handleExclamationClick}
-            title="프로필 사진 변경"
-          >
-            !
-          </button>
+        </div>
+        <div className="input-section">
+          <label htmlFor="name-input" className="input-label">이름을 작성해주세요.</label>
           <input
-            type="file"
-            accept="image/*"
-            style={{ display: 'none' }}
-            ref={fileInputRef}
-            onChange={handleProfileImgChange}
+            id="name-input"
+            type="text"
+            placeholder="이름을 입력하세요."
+            value={name}
+            onChange={e => setName(e.target.value)}
+            maxLength={12}
+          />
+          <label htmlFor="baekjoon-input" className="input-label">백준 id를 입력하세요.</label>
+          <input
+            id="baekjoon-input"
+            type="text"
+            placeholder="이메일을 제외한 아이디만 적어주세요."
+            value={baekjoonId}
+            onChange={e => setBaekjoonId(e.target.value)}
+            maxLength={20}
           />
         </div>
-        <div className="profile-colors">
-          {PROFILE_COLORS.map((color) => (
-            <button
-              key={color}
-              className={`color-btn${profileColor === color ? ' selected' : ''}`}
-              style={{ background: color }}
-              onClick={() => setProfileColor(color)}
-              aria-label={`프로필 색상 ${color}`}
-              type="button"
-            />
-          ))}
-        </div>
+        <button
+          className="signup-confirm-btn"
+          disabled={!isComplete}
+          onClick={() => {
+            if (isComplete) {
+              alert('회원가입이 완료되었습니다!');
+            }
+          }}
+        >
+          설정 완료하기
+        </button>
       </div>
-      <div className="input-section">
-        <h4>이름</h4>
-        <input
-          type="text"
-          placeholder="이름을 입력해주세요"
-          value={name}
-          onChange={e => setName(e.target.value)}
-          maxLength={12}
-        />
-        <h4>백준 ID</h4>
-        <input
-          type="text"
-          placeholder="백준 ID를 입력해주세요"
-          value={baekjoonId}
-          onChange={e => setBaekjoonId(e.target.value)}
-          maxLength={20}
-        />
-      </div>
-      <button
-        className="signup-confirm-btn"
-        disabled={!isComplete}
-        onClick={() => {
-          if (isComplete) {
-            alert('회원가입이 완료되었습니다!');
-          }
-        }}
-      >
-        설정 완료하기
-      </button>
     </div>
   );
 }
