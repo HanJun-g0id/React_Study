@@ -1,43 +1,50 @@
-.signup-box {
-  width: 370px;
+body {
+  background: #f4f5f7;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+
+.center-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-card {
   background: #fff;
-  border-radius: 18px;
-  padding: 36px 28px 32px 28px;
-  margin: 40px auto;
-  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 40px 32px 32px 32px;
+  width: 380px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
 }
 
 .signup-title {
-  margin: 0 0 26px 0;
-  font-size: 1.4rem;
-  color: #22223b;
+  font-size: 2rem;
   font-weight: bold;
+  color: #232334;
+  margin-bottom: 28px;
   text-align: center;
 }
 
-.profile-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 18px;
-}
-
-.profile-avatar-row {
+.profile-row {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
+  justify-content: center;
+  margin-bottom: 30px;
+  width: 100%;
 }
 
 .profile-avatar {
-  width: 72px;
-  height: 72px;
+  position: relative;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  background: #7e7de2;
+  background: linear-gradient(135deg, #b6d0ee 0%, #dbeafe 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,83 +53,55 @@
 }
 
 .profile-img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  pointer-events: none;
-  user-select: none;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: transparent;
+  z-index: 1;
 }
 
 .profile-edit-btn {
-  width: 20px;
-  height: 22px;
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  background: #fffbe6;
-  border: 2px solid #f7c948;
-  color: #f7c948;
-  font-size: 1.2rem;
-  font-weight: bold;
+  background: #fff;
+  border: 1.5px solid #e2e2e2;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  margin-left: 4px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  cursor: pointer;
+  padding: 0;
+  z-index: 2;
   transition: background 0.2s, border 0.2s;
 }
 .profile-edit-btn:hover {
-  background: #fff3cd;
-  border-color: #f5b800;
-  color: #f5b800;
-}
-
-
-.profile-img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  pointer-events: none;
-  user-select: none;
-}
-
-.profile-colors {
-  display: flex;
-  gap: 10px;
-}
-
-.color-btn {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 2px solid #eee;
-  outline: none;
-  cursor: pointer;
-  transition: border 0.2s, transform 0.1s;
-  margin: 0;
-  padding: 0;
-}
-.color-btn.selected {
-  border: 2.5px solid #222;
-  transform: scale(1.15);
+  background: #f3f6fa;
+  border-color: #a3cef1;
 }
 
 .input-section {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 14px;
   margin-bottom: 22px;
 }
-.input-section h4 {
+
+.input-label {
   margin: 0 0 4px 4px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1rem;
-  color: #22223b;
+  color: #7b7b87;
   text-align: left;
 }
 
 .input-section input {
-  width: 100%;
+  width: 90%;
   padding: 12px 14px;
   border: 1.5px solid #e2e2e2;
   border-radius: 7px;
@@ -130,29 +109,31 @@
   color: #222;
   background: #fafbfc;
   transition: border 0.2s;
-  display: block;
-  box-sizing: border-box;
 }
 .input-section input:focus {
-  border: 2.5px solid #6666FF;
+  border: 1.5px solid #6170fb;
   outline: none;
 }
 
 .signup-confirm-btn {
   width: 100%;
   padding: 13px 0;
-  background: #6666FF;
+  background: #bfc8d8;
   color: #fff;
   border: none;
   border-radius: 8px;
   font-size: 1.08rem;
   font-weight: 500;
   cursor: pointer;
+  margin-top: 24px;
   transition: background 0.2s, opacity 0.2s;
   opacity: 1;
 }
 .signup-confirm-btn:disabled {
-  background: #bcd7fa;
+  background: #e0e6ef;
   cursor: not-allowed;
-  opacity: 0.7;
+  opacity: 1;
+}
+.signup-confirm-btn:not(:disabled) {
+  background: #3b82f6;
 }
