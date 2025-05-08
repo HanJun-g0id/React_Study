@@ -1,5 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import ChangeProfile from './ChangeProfile';
+import MoveBJ from './MoveBJ';
 import './SignUpForm.css';
 
 function SignUpForm() {
@@ -7,6 +8,7 @@ function SignUpForm() {
   const [name, setName] = useState('');
   const [baekjoonId, setBaekjoonId] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMoveBJOpen, setIsMoveBJOpen] = useState(false);
 
   const isComplete = name.trim() && baekjoonId.trim();
 
@@ -57,7 +59,7 @@ function SignUpForm() {
           disabled={!isComplete}
           onClick={() => {
             if (isComplete) {
-              alert('회원가입이 완료되었습니다!');
+              setIsMoveBJOpen(true);
             }
           }}
         >
@@ -70,6 +72,9 @@ function SignUpForm() {
           onChange={handleProfileChange}
           onClose={() => setIsModalOpen(false)}
         />
+      )}
+      {isMoveBJOpen && (
+        <MoveBJ onClose={() => setIsMoveBJOpen(false)} />
       )}
     </div>
   );
