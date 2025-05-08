@@ -1,25 +1,18 @@
 import React, { useState, useRef } from 'react';
+import ChangeProfile from './ChangeProfile';
 import './SignUpForm.css';
 
 function SignUpForm() {
-  const [profileImg, setProfileImg] = useState('/logo192.png');
-  const fileInputRef = useRef(null);
+  const [profileImg, setProfileImg] = useState('/Profile.png');
   const [name, setName] = useState('');
   const [baekjoonId, setBaekjoonId] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const isComplete = name.trim() && baekjoonId.trim();
 
-  const handleProfileImgChange = (e) => {
-    const file = e.target.files && e.target.files[0];
-    if (file && file.type.startsWith('image/')) {
-      const reader = new FileReader();
-      reader.onload = (ev) => setProfileImg(ev.target.result);
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleEditClick = () => {
-    fileInputRef.current.click();
+  const handleProfileChange = (newImg) => {
+    setProfileImg(newImg);
+    setIsModalOpen(false);
   };
 
   return (
@@ -32,18 +25,11 @@ function SignUpForm() {
             <button
               className="profile-edit-btn"
               type="button"
-              onClick={handleEditClick}
+              onClick={() => setIsModalOpen(true)}
               title="프로필 사진 변경"
             >
-            <img src="./pencil.png" alt="프로필 사진 변경"/>
+              <img src="./pencil.png" alt="프로필 사진 변경"/>
             </button>
-            <input
-              type="file"
-              accept="image/*"
-              style={{ display: 'none' }}
-              ref={fileInputRef}
-              onChange={handleProfileImgChange}
-            />
           </div>
         </div>
         <div className="input-section">
@@ -78,6 +64,13 @@ function SignUpForm() {
           설정 완료하기
         </button>
       </div>
+      {isModalOpen && (
+        <ChangeProfile
+          currentImg={profileImg}
+          onChange={handleProfileChange}
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </div>
   );
 }
