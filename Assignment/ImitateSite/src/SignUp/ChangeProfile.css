@@ -1,0 +1,87 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(60, 60, 60, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal-box {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    padding: 36px 32px 28px 32px;
+    position: relative;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  .profile-img-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  
+  .profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
+    background: #f8f8f8;
+  }
+  
+  .btn-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 170px;
+    padding: 15px 0;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn:hover {
+    background: #444;
+  }
+  
+  .reset-btn {
+    background: #111;
+    color: #fff;
+  }
+  
+  .reset-btn:disabled {
+    background: #c0c0c0;
+    color: #fff;
+    cursor: not-allowed;
+  }
+  
+  .upload-btn {
+    background: #111;
+    color: #fff;
+  }  
