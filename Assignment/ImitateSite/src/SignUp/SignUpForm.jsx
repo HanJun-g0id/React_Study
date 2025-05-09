@@ -74,7 +74,12 @@ function SignUpForm() {
         />
       )}
       {isMoveBJOpen && (
-        <MoveBJ onClose={() => setIsMoveBJOpen(false)} />
+        <MoveBJ
+        onClose={() => setIsMoveBJOpen(false)}
+        profileImg={profileImg}
+        name={name}
+        baekjoonId={baekjoonId}
+      />
       )}
     </div>
   );
