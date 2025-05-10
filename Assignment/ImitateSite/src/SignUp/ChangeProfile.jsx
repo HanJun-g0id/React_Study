@@ -26,7 +26,7 @@ function ChangeProfile({ currentImg, onChange, onClose }) {
 
   return (
     <div className="modal-backdrop">
-      <div className="modal-box">
+      <div className="change-modal-box">
         <button className="modal-close" onClick={onClose} aria-label="닫기">&times;</button>
         <div className="profile-img-wrap">
           <img src={profilePic} alt="프로필" className="profile-img" />
