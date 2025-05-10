@@ -1,0 +1,36 @@
+  .home-h2 {
+    margin: 0 0 0 0;
+    line-height: 70px;
+    font-size: 40px;
+    font-family: sans-serif;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+  }
+  .home-h4 {
+    margin: 0 0 0 0;
+    line-height: 36px;
+    font-size: 24px;
+    font-family: sans-serif;
+    color: #CCCCFF;
+    text-align: center;
+    font-weight: 700;
+  }
+  .home-start-btn {
+    margin: 40px 0 0 0;
+    width: 370px;
+    height: 55px;
+    padding: 8px 12px 8px 12px;
+    background: #F8F8FF;
+    color: #4D50E2;
+    border: none;
+    font-weight: 500;
+    border-radius: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .home-start-btn:hover {
+    color: #CCCCFF;
+    background: #9999FF;
+  }
