@@ -1,4 +1,3 @@
-import React from 'react';
 import './CompleteModal.css';
 
 function CompleteModal({ onClose, onConfirm }) {
@@ -6,7 +5,7 @@ function CompleteModal({ onClose, onConfirm }) {
     <div className="modal-overlay">
       <div className="modal-box">
         <button className="modal-close" onClick={onClose}>×</button>
-        <div className="modal-icon">
+        <div className="complete-modal-icon">
           <img
             src="/check.png"
             alt="가입 완료 체크"
@@ -14,7 +13,7 @@ function CompleteModal({ onClose, onConfirm }) {
           />
         </div>
         <div className="modal-message">가입이 완료되었습니다.</div>
-        <button className="modal-confirm-btn" onClick={onConfirm}>
+        <button className="complete-modal-confirm-btn" onClick={onConfirm}>
           확인
         </button>
       </div>
