@@ -1,9 +1,8 @@
-import React, { useState } from "react";
 import './Home.css';
 import HomeHeader from '../Header/HomeHeader';
 
-function Home() {
-  const [profileImg] = useState("/Profile.png");
+function Home({profileImg}) {
+  
   return (
     <div
       style={{
