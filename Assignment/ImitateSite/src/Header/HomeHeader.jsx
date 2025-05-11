@@ -10,7 +10,7 @@ function HomeHeader({ profileImg }) {
     <header className="main-header">
       <div className="header-center" />
       <div className="header-left">
-        <img src="/LOGO.png" alt="DEV RACE 로고" className="header-logo" />
+        <img src="/LOGO.png" alt="DEV RACE 로고" className="header-logo" onClick={() => navigate('/home')} />
       </div>
       <div className="header-right">
         <button
