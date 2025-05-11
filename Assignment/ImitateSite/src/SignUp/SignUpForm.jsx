@@ -3,8 +3,8 @@ import ChangeProfile from './ChangeProfile';
 import MoveBJ from './MoveBJ';
 import './SignUpForm.css';
 
-function SignUpForm() {
-  const [profileImg, setProfileImg] = useState('/Profile.png');
+function SignUpForm({profileImg,setProfileImg}) {
+  
   const [name, setName] = useState('');
   const [baekjoonId, setBaekjoonId] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
