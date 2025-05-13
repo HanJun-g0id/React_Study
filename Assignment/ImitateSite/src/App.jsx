@@ -6,10 +6,11 @@ import CompleteSignUp from './Study/SignUp/CompleteSignUp';
 import Footer from './Study/Footer/Footer';
 import Header from './Study/Header/Header';
 import Home from './Study/Home/Home';
+import CreateRoom from './Study/CreateRoom/CreateRoom';
 
 function AppContent({ profileImg, setProfileImg }) {
   const location = useLocation();
-  const hideHeaderPaths = ["/home"];
+  const hideHeaderPaths = ["/home", "/create-room"];
   const isHeaderHidden = hideHeaderPaths.includes(location.pathname);
 
   return (
@@ -30,6 +31,8 @@ function AppContent({ profileImg, setProfileImg }) {
         <Route
           path="/home"
           element={<Home profileImg={profileImg} />}
+        />
+        <Route path="/create-room" element={<CreateRoom profileImg={profileImg} />}
         />
       </Routes>
       <Footer />
