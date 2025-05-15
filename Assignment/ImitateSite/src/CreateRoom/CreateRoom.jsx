@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './CreateRoom.css';
 import HomeHeader from '../Header/HomeHeader';
 
 function CreateRoom({ profileImg }) {
   const [problemNum, setProblemNum] = useState('');
   const isComplete = problemNum.trim();
+  const navigate = useNavigate();
+
+  const users = [
+    { name: '이정항', isLeader: true },
+    { name: 'qwer', isLeader: false },
+    { name: 'qwer', isLeader: false },
+    { name: 'qwer', isLeader: false },
+    { name: 'qwer', isLeader: false }
+  ];
 
   const handleCreateRoom = () => {
     if (isComplete) {
-      alert(`문제 번호 ${problemNum}로 방을 생성합니다!`);
+      navigate('/waiting-room', { state: { users } });
     }
   };
 
