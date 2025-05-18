@@ -39,6 +39,7 @@
 }
 
 .waiting-room-list {
+  /* 기존 스타일 유지 */
   background: #F8F8FF;
   border-radius: 12px;
   padding: 16px 16px;
@@ -48,6 +49,29 @@
   overflow-y: auto;
   box-shadow: 0 1px 4px rgba(108, 99, 255, 0.04);
 }
+
+.waiting-room-list::-webkit-scrollbar {
+  width: 5px;
+  background: #ececf6;
+  border-radius: 8px;
+}
+.waiting-room-list::-webkit-scrollbar-thumb {
+  background: #b5b5d6;
+  border-radius: 8px;
+}
+.waiting-room-list::-webkit-scrollbar-thumb:hover {
+  background: #8888c6;
+}
+.waiting-room-list::-webkit-scrollbar-track {
+  background: #f8f8ff;
+  border-radius: 8px;
+}
+.waiting-room-list::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
 
 .waiting-room-user {
   display: flex;
