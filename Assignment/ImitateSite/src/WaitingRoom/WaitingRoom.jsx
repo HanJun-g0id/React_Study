@@ -1,12 +1,15 @@
 import React from 'react';
 import './WaitingRoom.css';
 import { useLocation } from 'react-router-dom';
+import HomeHeader from '../Header/HomeHeader';
 
-function WaitingRoom() {
+function WaitingRoom({ profileImg }) {
   const location = useLocation();
   const users = location.state?.users || [];
   return (
+    
     <div className="waiting-room-background">
+      <HomeHeader profileImg={profileImg} />
       <div className="waiting-room-card">
         <img src= "/loading.png" alt="로고" className="loading-logo" />
         <h2 className="waiting-room-count">{users.length}명</h2>
