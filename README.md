@@ -12,7 +12,7 @@
   #### 💡 This is the file store where I practiced React.
   #### 📖 I am Korean, I inform you that all the comments are written in Korean.
   #### ❗ It's not been long since I've learned React, so the code can be messy, weird, or inefficient.
-  #### 🫠 It's for personal study, but I often copy and upload external files..
+  #### 🫠 It's for personal study, but I often copy and upload external files.
   <br/>
   <!--Body-->
   <br/>
